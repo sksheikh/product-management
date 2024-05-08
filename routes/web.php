@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImageUploadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -24,3 +25,5 @@ Auth::routes();
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->name('profile');
 Route::get('/category', [App\Http\Controllers\HomeController::class, 'category'])->name('category');
 Route::get('/products', [App\Http\Controllers\HomeController::class, 'products'])->name('products');
+
+Route::post('/profile/uoload', [ImageUploadController::class, 'uploadImage'])->name('profile.image.upload');

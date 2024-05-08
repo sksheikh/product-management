@@ -4,7 +4,7 @@
     <div class="container">
         <div class="top-bar">
             <h2>Welcome <span class="underline">{{ auth()->user()->user_type }}</span></h2>
-            <p>This Panel For You....vendor</p>
+            <p>This Panel For You....</p>
         </div>
         <div class="row justify-content-between">
             <div class="col-md-4">
