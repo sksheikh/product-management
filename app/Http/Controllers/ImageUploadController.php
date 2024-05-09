@@ -14,8 +14,10 @@ class ImageUploadController extends Controller
             $image = $request->file('image');
             $imageName = time().'.'.$image->getClientOriginalExtension();
             $directory = "upload/images/";
+            @unlink(Auth::user()->image);
             $image->move($directory, $imageName);
             $filePath = $directory. $imageName;
+
             User::where('id', Auth::user()->id)->update([
                 'image' => $filePath
             ]);
